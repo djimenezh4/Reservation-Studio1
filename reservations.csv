@@ -1,0 +1,9 @@
+name,time,guests,tableNumber,status,notes
+JOHN,12:30 PM,5,1,SEATED,window seat requested
+MARCUS,12:45 PM,3,2,SEATED,
+ALEX,12:30 PM,6,3,SEATED,birthday celebration
+ROBERT,12:30 PM,4,4,SEATED,
+ELAINE,12:30 PM,4,5,SEATED,
+DAVID,2:30 PM,2,1,RESERVATION,
+RACHEL,2:40 PM,5,2,RESERVATION,anniversary dinner
+DARRON,2:30 PM,5,6,RESERVATION,

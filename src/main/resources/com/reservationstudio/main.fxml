@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.reservationstudio.controller.MainController"
+            styleClass="root-pane">
+
+    <!-- ══════════════════════ TOP BAR ══════════════════════ -->
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="24">
+            <Label text="▦" styleClass="top-icon"/>
+            <Label fx:id="dateLabel" styleClass="top-date"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="timeLabel" styleClass="top-time"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="serviceLabel" styleClass="top-service"/>
+            <Label text="|" styleClass="top-sep"/>
+            <Label fx:id="pageLabel" styleClass="top-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox>
+
+            <!-- ══════════════════ LEFT PANEL ══════════════════ -->
+            <VBox styleClass="left-panel" minWidth="280" maxWidth="320" spacing="0">
+
+                <!-- Search -->
+                <VBox styleClass="section-block" spacing="6">
+                    <Label text="Search" styleClass="section-header-plain"/>
+                    <TextField fx:id="searchField" promptText="Search by name or time…"
+                               styleClass="search-field"/>
+                </VBox>
+
+                <!-- Seated -->
+                <VBox styleClass="section-block" spacing="6" VBox.vgrow="ALWAYS">
+                    <Label text="Seated" styleClass="section-header-red"/>
+                    <ListView fx:id="seatedListView" styleClass="res-list" VBox.vgrow="ALWAYS"/>
+                    <HBox spacing="6">
+                        <Button text="Mark Seated" onAction="#handleMarkSeated"
+                                styleClass="btn-secondary" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <Button text="Delete" onAction="#handleDeleteSelected"
+                                styleClass="btn-danger"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Reservations -->
+                <VBox styleClass="section-block" spacing="6" VBox.vgrow="ALWAYS">
+                    <Label text="Reservation" styleClass="section-header-red"/>
+                    <ListView fx:id="reservationListView" styleClass="res-list" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <!-- Add Reservation -->
+                <TitledPane text="Add Reservation" styleClass="add-pane" animated="true">
+                    <VBox spacing="8" styleClass="add-form">
+                        <TextField fx:id="addNameField" promptText="Guest name" styleClass="form-field"/>
+                        <TextField fx:id="addTimeField" promptText="Time (e.g. 7:00 PM)" styleClass="form-field"/>
+                        <HBox spacing="8" alignment="CENTER_LEFT">
+                            <Label text="Guests:" styleClass="form-label"/>
+                            <Spinner fx:id="addGuestsSpinner" min="1" max="20" initialValue="2"
+                                     prefWidth="70" styleClass="form-spinner"/>
+                            <Label text="Table:" styleClass="form-label"/>
+                            <Spinner fx:id="addTableSpinner" min="1" max="6" initialValue="1"
+                                     prefWidth="70" styleClass="form-spinner"/>
+                        </HBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label text="Status:" styleClass="form-label"/>
+                            <RadioButton text="Reservation" fx:id="resRadio"
+                                         toggleGroup="$statusToggleGroup" selected="true"
+                                         styleClass="form-radio"/>
+                            <RadioButton text="Seated" fx:id="seatedRadio"
+                                         toggleGroup="$statusToggleGroup"
+                                         styleClass="form-radio"/>
+                        </HBox>
+                        <TextField fx:id="addNotesField" promptText="Notes (optional)" styleClass="form-field"/>
+                        <HBox spacing="6">
+                            <Button text="Add Reservation" onAction="#handleAddReservation"
+                                    styleClass="btn-primary" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                            <Button text="Export CSV" onAction="#handleExportCsv"
+                                    styleClass="btn-secondary"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <!-- Status bar -->
+                <Label fx:id="statusBar" styleClass="status-bar" text="Ready"
+                       maxWidth="Infinity" wrapText="true"/>
+            </VBox>
+
+            <!-- ══════════════════ FLOOR PLAN ══════════════════ -->
+            <VBox styleClass="floor-panel" HBox.hgrow="ALWAYS" spacing="0">
+                <Label text="Floor Plan" styleClass="floor-title" maxWidth="Infinity"/>
+
+                <GridPane fx:id="floorGrid" styleClass="floor-grid"
+                          hgap="24" vgap="24"
+                          alignment="CENTER"
+                          VBox.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+                        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+                        <RowConstraints vgrow="ALWAYS" percentHeight="33"/>
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Legend -->
+                <HBox styleClass="legend-bar" spacing="20" alignment="CENTER">
+                    <HBox spacing="6" alignment="CENTER">
+                        <Region styleClass="legend-dot" style="-fx-background-color:#b08060;"/>
+                        <Label text="Available" styleClass="legend-label"/>
+                    </HBox>
+                    <HBox spacing="6" alignment="CENTER">
+                        <Region styleClass="legend-dot" style="-fx-background-color:#7a2030;"/>
+                        <Label text="Seated" styleClass="legend-label"/>
+                    </HBox>
+                    <HBox spacing="6" alignment="CENTER">
+                        <Region styleClass="legend-dot" style="-fx-background-color:#6b5c4e;"/>
+                        <Label text="Reserved" styleClass="legend-label"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <!-- Toggle group definition -->
+    <fx:define>
+        <ToggleGroup fx:id="statusToggleGroup"/>
+    </fx:define>
+
+</BorderPane>

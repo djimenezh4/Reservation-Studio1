@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════════════════
+   Reservation Studio — Dark Restaurant Theme
+   ═══════════════════════════════════════════════════ */
+
+/* ── Fonts & root ─────────────────────────────────── */
+.root {
+    -fx-font-family: "Georgia, serif";
+    -fx-background-color: #1a1a1a;
+}
+
+.root-pane {
+    -fx-background-color: #1a1a1a;
+}
+
+/* ── Top bar ──────────────────────────────────────── */
+.top-bar {
+    -fx-background-color: #111111;
+    -fx-padding: 10 20 10 20;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 2 0;
+}
+
+.top-icon {
+    -fx-font-size: 22px;
+    -fx-text-fill: #aaaaaa;
+}
+
+.top-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #dddddd;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1;
+}
+
+.top-time {
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.top-service {
+    -fx-font-size: 14px;
+    -fx-text-fill: #cccccc;
+    -fx-font-style: italic;
+}
+
+.top-sep {
+    -fx-text-fill: #555555;
+    -fx-font-size: 18px;
+}
+
+.top-page {
+    -fx-font-size: 13px;
+    -fx-text-fill: #aaaaaa;
+}
+
+/* ── Left panel ───────────────────────────────────── */
+.left-panel {
+    -fx-background-color: #111111;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 2 0 0;
+    -fx-padding: 0;
+}
+
+.section-block {
+    -fx-padding: 10 14 10 14;
+    -fx-border-color: #2a2a2a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.section-header-plain {
+    -fx-font-size: 14px;
+    -fx-text-fill: #cccccc;
+    -fx-font-style: italic;
+    -fx-padding: 4 14 6 14;
+    -fx-background-color: #2a2a2a;
+    -fx-background-radius: 20;
+    -fx-alignment: CENTER;
+    -fx-max-width: Infinity;
+}
+
+.section-header-red {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14 6 14;
+    -fx-background-color: #b03040;
+    -fx-background-radius: 6;
+    -fx-alignment: CENTER;
+    -fx-max-width: Infinity;
+    -fx-letter-spacing: 1;
+}
+
+/* ── Search field ─────────────────────────────────── */
+.search-field {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eeeeee;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-color: #444444;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 7 12 7 12;
+    -fx-font-size: 13px;
+}
+
+.search-field:focused {
+    -fx-border-color: #b03040;
+}
+
+/* ── List views ───────────────────────────────────── */
+.res-list {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #333333;
+    -fx-border-radius: 4;
+    -fx-control-inner-background: #1e1e1e;
+}
+
+.res-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.res-list .list-cell:selected {
+    -fx-background-color: #3a2020;
+}
+
+.res-list .list-cell:hover {
+    -fx-background-color: #2a2020;
+}
+
+/* Seated cells */
+.cell-seated {
+    -fx-background-color: #2c1a1a;
+    -fx-border-color: #3a1010;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Reservation cells */
+.cell-reservation {
+    -fx-background-color: #222222;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+
+.cell-name {
+    -fx-text-fill: #eeeeee;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 1;
+}
+
+.cell-info {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+}
+
+/* ── Add form (TitledPane) ────────────────────────── */
+.add-pane {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-background-color: #1a1a1a;
+}
+
+.add-pane > .title {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #cccccc;
+    -fx-font-style: italic;
+    -fx-padding: 6 14 6 14;
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+}
+
+.add-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: #aaaaaa;
+}
+
+.add-form {
+    -fx-padding: 10 14 10 14;
+    -fx-background-color: #181818;
+}
+
+.form-field {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eeeeee;
+    -fx-prompt-text-fill: #555555;
+    -fx-border-color: #444444;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 6 10 6 10;
+    -fx-font-size: 12px;
+}
+
+.form-field:focused {
+    -fx-border-color: #b03040;
+}
+
+.form-label {
+    -fx-text-fill: #999999;
+    -fx-font-size: 12px;
+}
+
+.form-radio {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 12px;
+}
+
+.form-spinner .text-field {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eeeeee;
+    -fx-border-color: #444444;
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn-primary {
+    -fx-background-color: #b03040;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 7 14 7 14;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #c84050;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #902030;
+}
+
+.btn-secondary {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #cccccc;
+    -fx-padding: 7 12 7 12;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #4a4a4a;
+}
+
+.btn-danger {
+    -fx-background-color: #5a1020;
+    -fx-text-fill: #ffaaaa;
+    -fx-padding: 7 12 7 12;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #7a2030;
+}
+
+/* ── Status bar ───────────────────────────────────── */
+.status-bar {
+    -fx-background-color: #0d0d0d;
+    -fx-text-fill: #78c878;
+    -fx-font-size: 11px;
+    -fx-padding: 5 14 5 14;
+    -fx-border-color: #333333;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ── Floor plan panel ─────────────────────────────── */
+.floor-panel {
+    -fx-background-color: #2a7a8a;
+    -fx-padding: 0;
+}
+
+.floor-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-padding: 12 20 12 20;
+    -fx-background-color: #236070;
+    -fx-border-color: #1a5060;
+    -fx-border-width: 0 0 2 0;
+    -fx-letter-spacing: 2;
+}
+
+.floor-grid {
+    -fx-padding: 30 30 20 30;
+    -fx-background-color: transparent;
+}
+
+/* ── Table nodes ──────────────────────────────────── */
+.table-node {
+    -fx-min-width: 140;
+    -fx-min-height: 90;
+    -fx-cursor: hand;
+}
+
+.table-number {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.85);
+}
+
+.table-cap {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+.table-name {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+    -fx-font-style: italic;
+}
+
+/* ── Legend ───────────────────────────────────────── */
+.legend-bar {
+    -fx-background-color: #1a5a6a;
+    -fx-padding: 8 20 8 20;
+}
+
+.legend-dot {
+    -fx-min-width: 14;
+    -fx-min-height: 14;
+    -fx-max-width: 14;
+    -fx-max-height: 14;
+    -fx-background-radius: 7;
+}
+
+.legend-label {
+    -fx-text-fill: #ccdddd;
+    -fx-font-size: 12px;
+}
+
+/* ── Scroll bars (dark theme) ─────────────────────── */
+.scroll-bar {
+    -fx-background-color: #1a1a1a;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #444444;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #666666;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #222222;
+}
+
+/* ── Dialog styling ───────────────────────────────── */
+.dialog-pane {
+    -fx-background-color: #1e1e1e;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #dddddd;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2a2a2a;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #eeeeee;
+    -fx-font-weight: bold;
+}
