@@ -10,13 +10,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/reservationstudio/main.fxml"));
-        Scene scene = new Scene(loader.load(), 1200, 750);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/reservationstudio/login.fxml"));
+        Scene scene = new Scene(loader.load(), 480, 380);
         scene.getStylesheets().add(getClass().getResource("/com/reservationstudio/style.css").toExternalForm());
         primaryStage.setTitle("Reservation Studio");
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(1000);
-        primaryStage.setMinHeight(650);
         primaryStage.show();
     }
 

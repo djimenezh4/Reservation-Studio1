@@ -20,6 +20,15 @@ public class Table {
     public int getCapacity() { return capacity; }
 
     public TableStatus getStatus() { return status.get(); }
+
+    public static TableStatus parseStatus(String s) {
+        switch (s.trim().toLowerCase()) {
+            case "seated":   return TableStatus.SEATED;
+            case "reserved": return TableStatus.RESERVED;
+            default:         return TableStatus.AVAILABLE;
+        }
+    }
+
     public void setStatus(TableStatus s) { status.set(s); }
     public ObjectProperty<TableStatus> statusProperty() { return status; }
 
